@@ -1,0 +1,8 @@
+/* || Specific elements */
+
+#etch_container {
+    width: 0.7vh;
+    height: 0.7vh;
+    display: flex;
+    flex-wrap: wrap;
+}
