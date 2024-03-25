@@ -1,8 +1,30 @@
+/* || Common elements */
+body{
+    margin: 0%;
+}
 /* || Specific elements */
 
+/* ||| Default styles */
+
 #etch_container {
-    width: 0.7vh;
-    height: 0.7vh;
+    width: 80vw;
+    height: 64vw;
+    border-radius: 2px;
+    border-color: black;
+    margin: auto;
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+.pixel {
+    width: 0.8vw;
+    max-width: 0.8vw;
+    height: 0.8vw;
+    max-height: 0.8vw;
+}
+/* ||| alternative styles */
+
+.black_pixel {
+    background-color: black;
 }
