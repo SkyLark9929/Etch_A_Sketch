@@ -1,27 +1,31 @@
 /* || Common elements */
 body{
+    height: 100vh;
     margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* || Specific elements */
 
 /* ||| Default styles */
 
 #etch_container {
-    width: 80vw;
-    height: 64vw;
-    border-radius: 2px;
-    border-color: black;
-    margin: auto;
+    width: 800px;
+    max-width: 800px;
+    height: 800px;
+    max-height: 800px;
+    border: solid 2px black;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .pixel {
-    width: 0.8vw;
-    max-width: 0.8vw;
-    height: 0.8vw;
-    max-height: 0.8vw;
+    width: 8px;
+    max-width: 8px;
+    height: 8px;
+    max-height: 8px;
 }
 /* ||| alternative styles */
 
