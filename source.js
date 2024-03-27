@@ -5,6 +5,21 @@ let etchBoardContainer = document.querySelector('#etch_container');
 let changeSizeButton = document.querySelector('#change_size');
 changeSizeButton.addEventListener('click', createGrid);
 
+// TODO
+// Remove grid button
+
+// TODO
+// Change color button
+
+// TODO
+// Eraser button and pen button
+
+// TODO
+// Erase everything button
+
+// TODO
+// Brush size
+
 // Checks whether the mouse is currently down
 let mouseDown = 0;
 document.body.onmousedown = function() { 
@@ -17,6 +32,8 @@ document.body.onmouseup = function() {
 // It seems like we have two ways of accomplishing stuff, either through flex-basis\
 // or through container div for each row. For now we will gow with second option.
 
+// FIXME
+// Remove grid elements before adding new ones
 function createGrid(){
   gridSide = prompt('Enter the number of pixels per sketch side. (No more than 100)');
 
@@ -41,12 +58,14 @@ function createGrid(){
   };
 };
 
+
 function fillPixel(e){
     if(mouseDown){
         e.target.classList.add('black_pixel');
     };
 }
-
+// TODO
+// make a function to remove all rows and pixels
 function removeGrid(){
 
 };
