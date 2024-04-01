@@ -9,7 +9,7 @@ etchBoardContainer.addEventListener('mousedown', setMouseDown); // Tells that th
 etchBoardContainer.addEventListener('mouseup', setMouseUp); // Tells that the mouse is up
 
 let changeSizeSlider = document.querySelector('#change_size');
-changeSizeSlider.addEventListener('input', (e) => createGrid(e));
+changeSizeSlider.addEventListener('input', createGrid);
 
 let changeColorInput = document.querySelector('#brush_color');
 let brushColor = changeColorInput.value;
@@ -17,6 +17,8 @@ changeColorInput.addEventListener('change', listenColorInput);
 
 let btnEraseEverything = document.querySelector('#erase_everything');
 btnEraseEverything.addEventListener('click', eraseEverything);
+
+createGrid(); // creates initial grid with default slider value
 
 // mouse up/down swithces
 function setMouseDown(e){
@@ -28,16 +30,16 @@ function setMouseUp(e){
 };
 
 // TODO
-// Eraser button and pen button
+// Eraser/pen selector with button text changing depending on whether it is eraser or pen.
 
 // TODO
 // Brush size
 
-function createGrid(e){
+function createGrid(){
   // remove existing rows
   removeExistingRows();
-
-  gridSide = e.target.value;
+  
+  gridSide = changeSizeSlider.value;
 
   // generate rows
   for (let i = 1; i < gridSide; i++){
