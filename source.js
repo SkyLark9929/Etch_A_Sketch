@@ -1,9 +1,24 @@
 let pixel;
 let row;
 let gridSide;
+let mouseDown = 0;
+
 let etchBoardContainer = document.querySelector('#etch_container');
+
 let changeSizeButton = document.querySelector('#change_size');
 changeSizeButton.addEventListener('click', createGrid);
+
+let changeColorInput = document.querySelector('#brush_color');
+let brushColor = changeColorInput.value;
+changeColorInput.addEventListener('change', listenColorInput);
+
+// switches mousedown boolean
+document.body.onmousedown = function() { 
+  mouseDown == true;
+}
+document.body.onmouseup = function() {
+  mouseDown == false;
+}
 
 // TODO
 // Remove grid button
@@ -20,14 +35,6 @@ changeSizeButton.addEventListener('click', createGrid);
 // TODO
 // Brush size
 
-// Checks whether the mouse is currently down
-let mouseDown = 0;
-document.body.onmousedown = function() { 
-  ++mouseDown;
-}
-document.body.onmouseup = function() {
-  --mouseDown;
-}
 
 // It seems like we have two ways of accomplishing stuff, either through flex-basis\
 // or through container div for each row. For now we will gow with second option.
@@ -58,14 +65,15 @@ function createGrid(){
   };
 };
 
-
-function fillPixel(e){
-    if(mouseDown){
-        e.target.classList.add('black_pixel');
-    };
+// || listen to the brush color input
+function listenColorInput(e){
+  brushColor = e.target.value;
 }
-// TODO
-// make a function to remove all rows and pixels
-function removeGrid(){
 
-};
+// || fill the pixels
+function fillPixel(e){
+// Checks whether the mouse is currently down
+  //if(mouseDown){
+      e.target.style.backgroundColor = brushColor;
+  //};
+}
