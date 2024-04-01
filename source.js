@@ -7,8 +7,8 @@ let etchBoardContainer = document.querySelector('#etch_container');
 etchBoardContainer.addEventListener('mousedown', setMouseDown); // Tells that the mouse is down
 etchBoardContainer.addEventListener('mouseup', setMouseUp); // Tells that the mouse is up
 
-let changeSizeButton = document.querySelector('#change_size');
-changeSizeButton.addEventListener('click', createGrid);
+let changeSizeSlider = document.querySelector('#change_size');
+changeSizeSlider.addEventListener('input', (e) => createGrid(e));
 
 let changeColorInput = document.querySelector('#brush_color');
 let brushColor = changeColorInput.value;
@@ -24,9 +24,6 @@ function setMouseUp(e){
 };
 
 // TODO
-// Remove grid button
-
-// TODO
 // Change color button
 
 // TODO
@@ -38,15 +35,11 @@ function setMouseUp(e){
 // TODO
 // Brush size
 
-// FIXME
-// Remove grid elements before adding new ones
-function createGrid(){
-  gridSide = prompt('Enter the number of pixels per sketch side. (No more than 100)');
+function createGrid(e){
+  // remove existing rows
+  removeExistingRows();
 
-  if (gridSide > 100){
-    gridSide = 100;
-    alert('Error: The number of pixels exceeds 100! Set to 100 instead.')
-  };
+  gridSide = e.target.value;
 
   // generate rows
   for (let i = 1; i < gridSide; i++){
@@ -76,3 +69,9 @@ function fillPixel(e){
   e.target.style.backgroundColor = brushColor;
   };
 }
+
+function removeExistingRows(){
+  while(etchBoardContainer.firstChild){
+    etchBoardContainer.removeChild(etchBoardContainer.firstChild);
+  };
+};
