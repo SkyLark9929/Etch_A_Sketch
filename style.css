@@ -34,6 +34,6 @@ body{
 }
 /* ||| alternative styles */
 
-.black_pixel {
+.filled_pixel {
     background-color: black;
 }
