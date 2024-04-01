@@ -2,6 +2,7 @@ let pixel;
 let row;
 let gridSide;
 let mouseDown;
+let backgroundColor = '#FFFFFF';
 
 let etchBoardContainer = document.querySelector('#etch_container');
 etchBoardContainer.addEventListener('mousedown', setMouseDown); // Tells that the mouse is down
@@ -14,6 +15,9 @@ let changeColorInput = document.querySelector('#brush_color');
 let brushColor = changeColorInput.value;
 changeColorInput.addEventListener('change', listenColorInput);
 
+let btnEraseEverything = document.querySelector('#erase_everything');
+btnEraseEverything.addEventListener('click', eraseEverything);
+
 // mouse up/down swithces
 function setMouseDown(e){
   mouseDown = true;
@@ -24,13 +28,7 @@ function setMouseUp(e){
 };
 
 // TODO
-// Change color button
-
-// TODO
 // Eraser button and pen button
-
-// TODO
-// Erase everything button
 
 // TODO
 // Brush size
@@ -60,7 +58,7 @@ function createGrid(e){
 // || listen to the brush color input
 function listenColorInput(e){
   brushColor = e.target.value;
-}
+};
 
 // || fill the pixels
 function fillPixel(e){
@@ -68,7 +66,14 @@ function fillPixel(e){
   if(mouseDown){
   e.target.style.backgroundColor = brushColor;
   };
-}
+};
+
+function eraseEverything(){
+  pixels = document.querySelectorAll('.pixel');
+  for (pixel of pixels){
+    pixel.style.backgroundColor = backgroundColor;
+  };
+};
 
 function removeExistingRows(){
   while(etchBoardContainer.firstChild){
