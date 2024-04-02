@@ -29,11 +29,11 @@ body{
 }
 
 .pixel {
-    border: solid 0.001px black;
+    border: solid 0.1px black;
     flex-grow: 1;
 }
-/* ||| alternative styles */
 
+/* ||| alternative styles */
 .filled_pixel {
     background-color: black;
 }

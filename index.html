@@ -12,10 +12,15 @@
         
     </div>
     <div id="controls_container">
+        <select name="tools" id="select_tools">
+            <option value="pen">pen</option>
+            <option value="eraser">eraser</option>
+        </select>
         <input type="range" min="5" max="100" value="50" step="1" id="change_size">
+        <label for="change_size">Brush size</label>
         <input type="color" id="brush_color" value="#000000">
-        <button type="button" id="erase_everything">Erase everything</button>
         <label for="brush_color">Brush Color</label>
+        <button type="button" id="erase_everything">Erase everything</button>
     </div>
 </body>
 </html>

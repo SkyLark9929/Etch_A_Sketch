@@ -3,10 +3,14 @@ let row;
 let gridSide;
 let mouseDown;
 let backgroundColor = '#FFFFFF';
+let tool = 'pen';
 
 let etchBoardContainer = document.querySelector('#etch_container');
 etchBoardContainer.addEventListener('mousedown', setMouseDown); // Tells that the mouse is down
 etchBoardContainer.addEventListener('mouseup', setMouseUp); // Tells that the mouse is up
+
+let toolSelector = document.querySelector('#select_tools');
+toolSelector.addEventListener('change', selectTool);
 
 let changeSizeSlider = document.querySelector('#change_size');
 changeSizeSlider.addEventListener('input', createGrid);
@@ -28,9 +32,6 @@ function setMouseDown(e){
 function setMouseUp(e){
   mouseDown = false;
 };
-
-// TODO
-// Eraser/pen selector with button text changing depending on whether it is eraser or pen.
 
 // TODO
 // Brush size
@@ -65,8 +66,10 @@ function listenColorInput(e){
 // || fill the pixels
 function fillPixel(e){
 // Checks whether the mouse is currently down
-  if(mouseDown){
-  e.target.style.backgroundColor = brushColor;
+  if(mouseDown && tool == 'pen'){
+    e.target.style.backgroundColor = brushColor;
+  } else if(mouseDown && tool == 'eraser'){
+    e.target.style.backgroundColor = 'white';
   };
 };
 
@@ -75,6 +78,11 @@ function eraseEverything(){
   for (pixel of pixels){
     pixel.style.backgroundColor = backgroundColor;
   };
+};
+
+function selectTool(e){
+  tool = e.target.value;
+  console.log(tool);
 };
 
 function removeExistingRows(){
