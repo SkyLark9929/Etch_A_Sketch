@@ -12,10 +12,8 @@ body{
 /* ||| Default styles */
 
 #etch_container {
-    width: 800px;
-    max-width: 800px;
-    height: 800px;
-    max-height: 800px;
+    height: 80vh;
+    width: 80vh;
     border: solid 2px black;
     display: flex;
     flex-direction: column;
@@ -29,8 +27,22 @@ body{
 }
 
 .pixel {
-    border: solid 0.1px black;
     flex-grow: 1;
+}
+
+#controls_container{
+    width: 80vh;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.handle_container{
+    gap: 1vh;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
 }
 
 /* ||| alternative styles */

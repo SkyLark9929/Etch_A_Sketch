@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="source.js" defer></script>
 </head>
@@ -12,15 +12,24 @@
         
     </div>
     <div id="controls_container">
-        <select name="tools" id="select_tools">
-            <option value="pen">pen</option>
-            <option value="eraser">eraser</option>
-        </select>
-        <input type="range" min="5" max="100" value="50" step="1" id="change_size">
-        <label for="change_size">Brush size</label>
-        <input type="color" id="brush_color" value="#000000">
-        <label for="brush_color">Brush Color</label>
-        <button type="button" id="erase_everything">Erase everything</button>
+        <div class="handle_container">
+            <label for="select_tools">Tools:</label>
+            <select name="tools" id="select_tools">
+                <option value="pen">pen</option>
+                <option value="eraser">eraser</option>
+            </select>
+        </div>
+        <div class="handle_container">
+            <label for="change_size">Brush size:</label>
+            <input type="range" min="5" max="100" value="50" step="1" id="change_size">
+        </div>
+        <div class="handle_container">
+            <label for="brush_color">Brush Color:</label>
+            <input type="color" id="brush_color" value="#000000">
+        </div>
+        <div class="handle_container">
+            <button type="button" id="erase_everything">Erase everything</button>
+        </div>
     </div>
 </body>
 </html>
