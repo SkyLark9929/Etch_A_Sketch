@@ -3,7 +3,7 @@ let row;
 let gridSide;
 let mouseDown;
 let backgroundColor = '#FFFFFF';
-let tool = 'pen';
+let tool = 'pen'; // a variable that switches the tools
 
 let etchBoardContainer = document.querySelector('#etch_container');
 etchBoardContainer.addEventListener('mousedown', setMouseDown); // Tells that the mouse is down
@@ -32,9 +32,6 @@ function setMouseDown(e){
 function setMouseUp(e){
   mouseDown = false;
 };
-
-// TODO
-// Brush size
 
 function createGrid(){
   // remove existing rows
